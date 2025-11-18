@@ -6,13 +6,17 @@
 # DDEV NVM
 
 > [!NOTE]
-> Since DDEV v1.25.0+, `nvm` is no longer included by default. Using `ddev nvm install` can make it unclear how to return to the version defined by `nodejs_version`. The switch back is:
+> Since DDEV v1.25.0+, `nvm` is no longer included by default. The reasons are:
+>
+> Running `ddev nvm install` can make it unclear how to return to the version defined by `nodejs_version`. To switch back:
 >
 > ```bash
 > ddev nvm alias default system
 > ```
 >
 > And `ddev nvm use` doesn't behave like the interactive `nvm use`, because `nvm` is a shell function rather than a standalone executable and cannot modify the shell environment inside DDEV.
+>
+> ---
 >
 > For most projects, [`nodejs_version`](https://docs.ddev.com/en/stable/users/configuration/config/#nodejs_version) offers a more predictable workflow:
 >
@@ -25,6 +29,8 @@
 > ```bash
 > ddev config --nodejs-version=auto
 > ```
+>
+> However, if you need `nvm` for managing multiple Node.js versions, this add-on provides that functionality.
 
 ## Overview
 
