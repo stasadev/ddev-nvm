@@ -39,17 +39,41 @@ setup() {
 }
 
 health_checks() {
-  # Do something useful here that verifies the add-on
-
-  # You can check for specific information in headers:
-  # run curl -sfI https://${PROJNAME}.ddev.site
-  # assert_output --partial "HTTP/2 200"
-  # assert_output --partial "test_header"
-
-  # Or check if some command gives expected output:
-  DDEV_DEBUG=true run ddev launch
+  run ddev nvm current
   assert_success
-  assert_output --partial "FULLURL https://${PROJNAME}.ddev.site"
+  assert_output "system"
+
+  run ddev nvm install 6
+  assert_success
+  assert_output --partial "Now using node v6"
+
+  run ddev nvm alias default 6 --no-colors
+  assert_success
+  assert_output --partial "default -> 6"
+
+  run ddev nvm current
+  assert_success
+  assert_output --partial "v6"
+
+  run ddev exec node --version
+  assert_success
+  assert_output --partial "v6"
+
+  run ddev nvm install 10
+  assert_success
+  assert_output --partial "Now using node v10"
+
+  run ddev nvm alias default 10 --no-colors
+  assert_success
+  assert_output --partial "default -> 10"
+
+  run ddev nvm current
+  assert_success
+  assert_output --partial "v10"
+
+  run ddev exec node --version
+  assert_success
+  assert_output --partial "v10"
 }
 
 teardown() {
