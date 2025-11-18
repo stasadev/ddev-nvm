@@ -13,6 +13,8 @@ tar -C "${TMP_NVM_DIR}" -czf /usr/local/nvm.tar.gz . && rm -rf "${TMP_NVM_DIR}"
 
 # Add runtime initialization to bashrc
 cat >> /tmp/nvm_script.sh <<'NVM_SCRIPT'
+
+# Initialize nvm from the global cache for the current $DDEV_USER
 if [ "$(id -u):$(id -g)" = "${DDEV_UID}:${DDEV_GID}" ]; then
   if [ ! -f "/mnt/ddev-global-cache/nvm_dir/${HOSTNAME}/nvm.sh" ]; then
     mkdir -p "/mnt/ddev-global-cache/nvm_dir/${HOSTNAME}"
