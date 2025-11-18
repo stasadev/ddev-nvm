@@ -1,7 +1,7 @@
 [![add-on registry](https://img.shields.io/badge/DDEV-Add--on_Registry-blue)](https://addons.ddev.com)
-[![tests](https://github.com/stasadev/ddev-nvm/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/stasadev/ddev-nvm/actions/workflows/tests.yml?query=branch%3Amain)
-[![last commit](https://img.shields.io/github/last-commit/stasadev/ddev-nvm)](https://github.com/stasadev/ddev-nvm/commits)
-[![release](https://img.shields.io/github/v/release/stasadev/ddev-nvm)](https://github.com/stasadev/ddev-nvm/releases/latest)
+[![tests](https://github.com/ddev/ddev-nvm/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ddev/ddev-nvm/actions/workflows/tests.yml?query=branch%3Amain)
+[![last commit](https://img.shields.io/github/last-commit/ddev/ddev-nvm)](https://github.com/ddev/ddev-nvm/commits)
+[![release](https://img.shields.io/github/v/release/ddev/ddev-nvm)](https://github.com/ddev/ddev-nvm/releases/latest)
 
 # DDEV NVM
 
@@ -39,7 +39,7 @@ This add-on integrates [NVM](https://github.com/nvm-sh/nvm) into your [DDEV](htt
 ## Installation
 
 ```bash
-ddev add-on get stasadev/ddev-nvm
+ddev add-on get ddev/ddev-nvm
 ddev restart
 ```
 
@@ -122,4 +122,4 @@ ddev nvm alias default system
 
 ## Credits
 
-**Contributed and maintained by [@stasadev](https://github.com/stasadev)**
+**Contributed and maintained by the [DDEV team](https://ddev.com/support-ddev/)**
