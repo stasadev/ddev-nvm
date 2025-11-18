@@ -1,6 +1,8 @@
 name: nvm
 
 project_files:
-  - docker-compose.nvm.yaml
+  - commands/web/nvm
+  - commands/web/autocomplete/nvm
+  - web-build/Dockerfile.nvm
 
-ddev_version_constraint: '>= v1.24.3'
+ddev_version_constraint: '>= v1.24.10'
